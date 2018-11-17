@@ -8,6 +8,7 @@
 <p><%= @listing.end_date %></p>
 
 <%= image_tag(@listing.image_url) %>
+<%= link_to @listing.user.name, user_path(@listing.user.id) %>
 <%= link_to like_listing_path(@listing), method: :put do %>
   Request
   <%= @listing.get_upvotes.size %>

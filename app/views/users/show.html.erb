@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<h1>All My Listings</h1>
+<% @user.listings.each do |listing| %>
+  <%= link_to(listing) do %>
+    <%= image_tag(listing.image_url) %>
+  <% end %>
+  <% listing.votes_for.up.voters.each do |user| %>
+    <p>Requests:</p>
+    <%= link_to user.name, user_path(user.id) %>
+  <% end %>
+  <br>
+<% end %>
+
+<br>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

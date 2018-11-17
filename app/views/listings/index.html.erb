@@ -29,6 +29,7 @@
               Request
               <%= listing.get_upvotes.size %>
             <% end %>
+            <%= link_to listing.user.name, user_path(listing.user.id) %>
           <% end %>
         </div>
       <% end %>
