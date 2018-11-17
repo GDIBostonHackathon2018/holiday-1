@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "listings#index"
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   resources :trips
   resources :saves
   resources :pictures
