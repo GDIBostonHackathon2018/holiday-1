@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
+<p><%= @listing.user.name %></p>
+<p><%= @listing.title %></p>
+<p><%= @listing.location %></p>
+<p><%= @listing.house_type %></p>
+<p><%= @listing.start_date %></p>
+<p><%= @listing.end_date %></p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
