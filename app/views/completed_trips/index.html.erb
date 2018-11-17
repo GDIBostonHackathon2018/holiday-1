@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Completed Trips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @completed_trips.each do |completed_trip| %>
+      <tr>
+        <td><%= link_to 'Show', completed_trip %></td>
+        <td><%= link_to 'Edit', edit_completed_trip_path(completed_trip) %></td>
+        <td><%= link_to 'Destroy', completed_trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Completed Trip', new_completed_trip_path %>
