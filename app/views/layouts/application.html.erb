@@ -7,9 +7,43 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  	<title>Home</title>
   </head>
 
   <body>
+    <div class="container-fluid">
+  <!--main navigation-->
+      <nav class="navbar navbar-expand-sm">
+    		<ul class="navbar-nav">
+          <li class="nav-home" style="font-family: pacifico; font-size: 24px;">
+            <a class="nav-link" href="/">Holiday</a>
+      		<li class="nav-browse">
+        			<a class="nav-link" href="/listings">Browse</a>
+      		</li>
+      		<li class="nav-likes">
+        			<a class="nav-link" href="likes.html">Likes</a>
+      		</li>
+     			<li class="nav-matches">
+        			<a class="nav-link" href="matches.html">Matches</a>
+     			</li>
+    		</ul>
+        <form class="form-inline" action="/action_page.php">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <br>
+      </nav>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <ul class="hmenu">

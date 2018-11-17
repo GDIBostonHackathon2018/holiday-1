@@ -6,5 +6,10 @@
 <p><%= @listing.start_date %></p>
 <p><%= @listing.end_date %></p>
 
+<%= link_to like_listing_path(@listing), method: :put do %>
+  Request
+  <%= @listing.get_upvotes.size %>
+<% end %>
+
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>

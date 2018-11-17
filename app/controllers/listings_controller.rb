@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :authenticate_user!
 
   # GET /listings
@@ -20,6 +20,11 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/edit
   def edit
+  end
+  
+  def upvote 
+    @listing.upvote_by current_user
+    redirect_to listing_path
   end
 
   # POST /listings
