@@ -12,14 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2018_11_17_205024) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "completed_trips", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "listings", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "trip_id"
+    t.bigint "user_id"
+    t.bigint "trip_id"
     t.string "location"
     t.string "house_type"
     t.datetime "start_date"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_11_17_205024) do
   end
 
   create_table "pictures", force: :cascade do |t|
-    t.integer "listing_id"
+    t.bigint "listing_id"
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -41,8 +44,8 @@ ActiveRecord::Schema.define(version: 2018_11_17_205024) do
   end
 
   create_table "saves", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "listing_id"
+    t.bigint "user_id"
+    t.bigint "listing_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["listing_id"], name: "index_saves_on_listing_id"
@@ -50,8 +53,8 @@ ActiveRecord::Schema.define(version: 2018_11_17_205024) do
   end
 
   create_table "trips", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "listing_id"
+    t.bigint "user_id"
+    t.bigint "listing_id"
     t.boolean "completed_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -73,7 +76,7 @@ ActiveRecord::Schema.define(version: 2018_11_17_205024) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "votes", force: :cascade do |t|
+  create_table "votes", id: :serial, force: :cascade do |t|
     t.string "votable_type"
     t.integer "votable_id"
     t.string "voter_type"

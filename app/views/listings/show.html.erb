@@ -1,18 +1,59 @@
 <p id="notice"><%= notice %></p>
-<p><%= @listing.user.name %></p>
-<p><%= @listing.title %></p>
-<p><%= @listing.location %></p>
-<p><%= @listing.image_url %></p>
-<p><%= @listing.house_type %></p>
-<p><%= @listing.start_date %></p>
-<p><%= @listing.end_date %></p>
 
-<%= image_tag(@listing.image_url) %>
-<%= link_to @listing.user.name, user_path(@listing.user.id) %>
-<%= link_to like_listing_path(@listing), method: :put do %>
-  Request
-  <%= @listing.get_upvotes.size %>
-<% end %>
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<div class="container-fluid">
+  <div class="row" style="margin-top: 15px">
+    <div class="col-sm-6">
+      <%= image_tag @listing.image_url, height: "80", width: "100" %>
+    </div>
+    <div class="col-sm-3">
+      <%= link_to "Host: #{@listing.user.name}", user_path(@listing.user.id) %>
+      <h5>Rating:</h5><br>
+      <h5>Location: <%= @listing.location %></h5><br>
+      <h5>Number of Beds: Three</h5><br>
+      <h5>Reviews:</h5>
+      <p>"My best swapping experience ever..."</p>
+      <p>"Great place for a family, not great for solo travel"</p>
+      <p>"Awesome location! Super close to Paris!"</p><br>
+    </div>
+    <div clas="col-sm-3">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+    </div>
+  </div>
+  <div class="row" style="margin-top:15px">
+    <h1>Similar Swaps</h1>
+    <div class="row">
+    <div class="col-sm-4">
+      <img src="amazonescape.jpg" alt="location3">
+      <h4>Amazon Escape</h4>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+    <div class="col-sm-4">
+      <img src="lavishliving.jpg" alt="location2">
+      <h4>Lavish Living</h4>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+    </div>
+    <div class="col-sm-4">
+      <img src="cozyafternoon.jpg" alt="location6">
+      <h4>Cozy Afternoon</h4>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+  </div>
+  
+  <%= link_to 'Edit', edit_listing_path(@listing) %> |
+  <%= link_to 'Back', listings_path %>
