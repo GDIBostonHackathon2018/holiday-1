@@ -24,7 +24,7 @@ class ListingsController < ApplicationController
   
   def upvote 
     @listing.upvote_by current_user
-    redirect_to listing_path
+    redirect_back(fallback_location: root_path)
   end
 
   # POST /listings
@@ -75,6 +75,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:start_date, :end_date, :user_id, :location, :house_type, :title)
+      params.require(:listing).permit(:start_date, :end_date, :user_id, :location, :house_type, :title, :image_url)
     end
 end

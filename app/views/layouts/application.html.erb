@@ -31,7 +31,7 @@
         			<a class="nav-link" href="/listings">Browse</a>
       		</li>
       		<li class="nav-likes">
-        			<a class="nav-link" href="likes.html">Likes</a>
+        			<a class="nav-link" href="/saves">Requests</a>
       		</li>
      			<li class="nav-matches">
         			<a class="nav-link" href="matches.html">Matches</a>
@@ -44,12 +44,15 @@
         <br>
       </nav>
     </div>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <ul class="hmenu">
       <%= render 'devise/menu/registration_items' %>
       <%= render 'devise/menu/login_items' %>
     </ul>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -4,7 +4,7 @@ class SavesController < ApplicationController
   # GET /saves
   # GET /saves.json
   def index
-    @saves = Save.all
+    @requests = current_user.find_voted_items
   end
 
   # GET /saves/1

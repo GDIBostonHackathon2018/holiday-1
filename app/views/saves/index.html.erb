@@ -1,25 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Saves</h1>
+<h1>My Requests</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @saves.each do |safe| %>
-      <tr>
-        <td><%= link_to 'Show', safe %></td>
-        <td><%= link_to 'Edit', edit_safe_path(safe) %></td>
-        <td><%= link_to 'Destroy', safe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Safe', new_safe_path %>
+<div class="container-fluid">
+  <div class="row" style="margin-top: 15px">
+      <% @requests.each do |request| %>
+      
+        <div class="col-sm-4">
+          <%= link_to(request) do %>
+            <%= image_tag(request.image_url) %>
+          <% end %>
+        </div>
+      <% end %>
+  </div> 
+</div>

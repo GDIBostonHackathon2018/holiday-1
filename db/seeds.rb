@@ -21,7 +21,8 @@ I18n.reload!
     start_date: Faker::Date.between(Date.today, 5.year.from_now),
     end_date: Faker::Date.between(Date.today + 1, 5.year.from_now),
     location: Faker::Address.full_address,
-    house_type: 5
+    house_type: 5,
+    image_url: "poolisideparadise.jpg"
   )
 
 end
