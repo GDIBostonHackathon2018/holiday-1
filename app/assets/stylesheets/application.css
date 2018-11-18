@@ -15,29 +15,54 @@
  */
 
 .contanier {
-	background-color: linen;
+  background-color: linen;
 }
 
 .row {
-	padding-top: 10px;
-	background-color: lightgrey;
-	border-radius: 7px;
+  padding-top: 10px;
+  background-color: lightgrey;
+  border-radius: 7px;
 }
 
-img{
-	height: 300px;
-	width: 400px;
-	border-width: 5px;
-	border-radius: 7px;
-	border-color: lightblue;
+img {
+  height: 300px;
+  width: 400px;
+  border-width: 5px;
+  border-radius: 7px;
+  border-color: lightblue;
 }
 
-.navbar{
-	background-color: lightblue;
-	border-radius: 7px;
-	
+.navbar {
+  background-color: lightblue;
+  border-radius: 7px;
 }
 
-h4{
-	text-align: center;
+.nav-home a {
+  color: #ff3399;
+}
+
+h4 {
+  text-align: center;
+}
+
+.nav-signin a {
+  text-align: right;
+  color: #0033cc;
+}
+
+h4.class-name {
+  color: darkblue;
+}
+
+.row p {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.glyp_1 img {
+  width: 20px;
+  height: 20px;
+}
+.glyp_2 img {
+  width: 80px;
+  height: 50px;
 }

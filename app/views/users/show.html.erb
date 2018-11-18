@@ -1,5 +1,29 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Bio</h1>
+<div class="row">
+        <div class="col-md-6">
+            <div class="glyp_1">
+                <p>Ratings:<%= image_tag("si-glyph-circle-star.svg")%><%= image_tag("si-glyph-circle-star.svg")%><%= image_tag("si-glyph-circle-star.svg")%><%= image_tag("si-glyph-circle-star.svg")%> </p>
+            </div>
+            <br>
+            <div class="img-rounded">
+                <%= image_tag("host_image.jpeg") %>
+                <p>Hi! My name is <%= @user.name %> , <%= @user.bio %></p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <br>
+            <br>
+              <%= image_tag(@user.listings.first.image_url) %>
+            <div class="glyp_2">
+                <%= image_tag("si-glyph-bed.svg")%><%= image_tag("si-glyph-bed.svg")%><%= image_tag("si-glyph-bed.svg")%>
+            </div>
+            <p>I live in France and I love traveling. I am very clean and respectful of other’s homes when I travel, and hope for the same from those that stay in my home :)</p>
+        </div>
+   </div>
+
+
 <h1>All My Listings</h1>
 <% @user.listings.each do |listing| %>
   <%= link_to(listing) do %>
