@@ -41,16 +41,16 @@
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
           <button class="btn btn-primary" type="submit">Search</button>
         </form>
+        <ul class="nav navbar-nav navbar-right">
+          <%= render 'devise/menu/registration_items' %>
+          <%= render 'devise/menu/login_items' %>
+        </ul>
         <br>
       </nav>
     </div>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <ul class="hmenu">
-      <%= render 'devise/menu/registration_items' %>
-      <%= render 'devise/menu/login_items' %>
-    </ul>
     <div class="container-fluid">
       <%= yield %>
     </div>
